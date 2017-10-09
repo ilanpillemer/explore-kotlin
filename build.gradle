@@ -12,10 +12,12 @@ buildscript {
 
 plugins {
     id "org.jetbrains.kotlin.jvm" version "1.1.51"
+    id "application"
 }
 
 description = 'A trivial Gradle build'
 version = '1.0'
+mainClassName = "org.pillemer.HelloKt"
 
 repositories {
     mavenCentral()
@@ -32,5 +34,25 @@ dependencies {
 kotlin {
     experimental {
         coroutines 'enable'
+    }
+}
+
+test {
+    testLogging {
+        // Make sure output from
+        // standard out or error is shown
+        // in Gradle output.
+        showStandardStreams = true
+ 
+        // Or we use events method:
+        // events 'standard_out', 'standard_error'
+ 
+        // Or set property events:
+        // events = ['standard_out', 'standard_error']
+ 
+        // Instead of string values we can
+        // use enum values:
+        // events org.gradle.api.tasks.testing.logging.TestLogEvent.STANDARD_OUT,
+        //        org.gradle.api.tasks.testing.logging.TestLogEvent.STANDARD_ERROR,
     }
 }
