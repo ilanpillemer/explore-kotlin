@@ -14,10 +14,19 @@ fun triangles() {
     }
 }
 
-// fun anagrams(a : String, n : Int ) {
-//     if (n == 0) {
+fun anagrams(w : CharArray, n :Int) {
+	if (n == 0) {
+		println(String(w))
+	}
+	else for (i in 0..n) {
+		var j : Int
+		anagrams(w,n-1)
+		if (n%2==0) j = 0 else j = i
+		val temp = w[j]
+		w[j] = w[n]
+		w[n] = temp
+	}
+}
 
-//     }
-// }
-
+	
 

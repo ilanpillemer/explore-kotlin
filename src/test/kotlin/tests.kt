@@ -15,8 +15,8 @@ class TestSource() {
         triangles()
     }
 
-    @test fun `Heaps Agorithm`() {
-        anagrams("rat",2)
-    }
+//    @test fun `Heaps Agorithm`() {
+//        anagrams("rat",2)
+//    }
 
 }
